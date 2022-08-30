@@ -55,6 +55,20 @@
     How much and at which layer should we introduce cache to speed things up?
     What components need better load balancing?
 
+    Storage 
+      Range Based Partitioning - When you partition the drive by (for example) letters partition for 'A', parition for 'B'.
+        Problem - can lead to unbalanced db servers
+      Hash based paritioning - Take a hash of the object then calc which parition to use.
+      
+      Redundancy removes single point of failure
+
+    cache
+      LRU - LEast Recently Used - Cache eviction strategy
+
+    Load Balancer
+      Round Robin - Evenly distributes queries
+        Problem - Does not take into account server load, or slow servers. 
+
   identifiying and resolving bottlenecks  
     Is there any single point of failure in our system? What are we doing to mitigate it?
     Do we have enough replicas of the data so that we can still serve our users if we lose a few servers?
